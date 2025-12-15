@@ -1,0 +1,214 @@
+# ============================================
+# Health Advisor AI - Requirements & Setup
+# ============================================
+
+# Project: Self-Learning Health Advisor AI
+# Description: A PHP web application that provides 
+#              health advice using Google Gemini API
+#              with self-learning capabilities
+
+# ============================================
+# 1. PHP REQUIREMENTS
+# ============================================
+
+PHP Version: 7.4 or higher (Recommended: 8.0+)
+
+Required PHP Extensions:
+  - curl        (for API requests to Gemini)
+  - json        (for data handling)
+  - session     (for user authentication)
+  - mbstring    (for string manipulation)
+  - openssl     (for HTTPS connections)
+
+# ============================================
+# 2. SYSTEM REQUIREMENTS
+# ============================================
+
+Operating System: Windows / Linux / macOS
+Web Server: PHP Built-in Server, Apache, or Nginx
+Internet: Required (for Gemini API calls)
+
+# ============================================
+# 3. API REQUIREMENTS
+# ============================================
+
+Google Gemini API Key:
+  - Get from: https://aistudio.google.com/app/apikey
+  - Model used: gemini-2.0-flash
+  - Free tier available
+
+# ============================================
+# 4. INSTALLATION OPTIONS
+# ============================================
+
+# OPTION A: Install PHP on Windows (via Chocolatey)
+#   Open PowerShell as Administrator and run:
+#   > choco install php -y
+
+# OPTION B: Install PHP on Windows (Manual)
+#   1. Download from: https://windows.php.net/download/
+#   2. Extract to C:\php
+#   3. Add C:\php to system PATH
+#   4. Enable extensions in php.ini
+
+# OPTION C: Use XAMPP (All-in-one)
+#   1. Download from: https://www.apachefriends.org/
+#   2. Install and start Apache
+#   3. Place project in C:\xampp\htdocs\
+
+# ============================================
+# 5. RUN COMMANDS
+# ============================================
+
+# ------------------------------------------
+# USING PHP BUILT-IN SERVER (Recommended)
+# ------------------------------------------
+
+# Windows (PowerShell):
+php -S localhost:8000
+
+# Windows (Command Prompt):
+php -S localhost:8000
+
+# Linux/macOS:
+php -S localhost:8000
+
+# Then open browser: http://localhost:8000
+
+# ------------------------------------------
+# USING START.BAT (Shows IP for Mobile Access)
+# ------------------------------------------
+
+# Double-click start.bat OR run in terminal:
+start.bat
+
+# This will:
+#   1. Display your local IP address
+#   2. Show the URL to access from mobile
+#   3. Start the server on 0.0.0.0:8000
+
+# ------------------------------------------
+# USING XAMPP
+# ------------------------------------------
+
+# 1. Copy project folder to: C:\xampp\htdocs\health_advaicer_ai
+# 2. Start Apache from XAMPP Control Panel
+# 3. Open browser: http://localhost/health_advaicer_ai
+
+# ------------------------------------------
+# USING CUSTOM PORT
+# ------------------------------------------
+
+php -S localhost:3000
+php -S localhost:8080
+php -S 127.0.0.1:5000
+
+# ------------------------------------------
+# ACCESS FROM MOBILE (Local Network)
+# ------------------------------------------
+
+# Step 1: Find your PC's local IP address
+#   Windows: Open Command Prompt and run:
+#     ipconfig
+#   Look for "IPv4 Address" (e.g., 192.168.1.100)
+
+# Step 2: Start server with 0.0.0.0 (allows network access)
+php -S 0.0.0.0:8000
+
+# Step 3: On your mobile (connected to same WiFi):
+#   Open browser and go to:
+#     http://YOUR_PC_IP:8000
+#   Example: http://192.168.1.100:8000
+
+# IMPORTANT:
+#   - Both PC and mobile must be on SAME WiFi network
+#   - Windows Firewall may block - allow PHP through firewall
+#   - To allow firewall (PowerShell as Admin):
+#     netsh advfirewall firewall add rule name="PHP Server" dir=in action=allow protocol=TCP localport=8000
+
+# ============================================
+# 6. QUICK START GUIDE
+# ============================================
+
+# Step 1: Start the server
+#   > cd health_advaicer_ai
+#   > php -S localhost:8000
+
+# Step 2: Open in browser
+#   http://localhost:8000
+
+# Step 3: Register an account
+#   - Click "Register" on login page
+#   - Enter username and password
+
+# Step 4: Configure API Key
+#   - Go to Settings page
+#   - Enter your Gemini API key
+#   - Click Save
+
+# Step 5: Start chatting!
+#   - Ask health questions
+#   - AI learns from your conversations
+
+# ============================================
+# 7. PROJECT STRUCTURE
+# ============================================
+
+# health_advaicer_ai/
+# ├── index.php          # Main chat interface
+# ├── login.php          # Member login/register
+# ├── settings.php       # API key settings
+# ├── requirements.txt   # This file
+# ├── api/
+# │   ├── chat.php       # Chat endpoint with self-learning
+# │   ├── auth.php       # Authentication API
+# │   ├── settings.php   # Settings API
+# │   └── history.php    # Chat history API
+# ├── includes/
+# │   ├── gemini.php     # Gemini Flash 2.5 API wrapper
+# │   ├── self_learn.php # Self-learning engine
+# │   ├── storage.php    # File operations
+# │   └── auth_check.php # Session management
+# ├── assets/
+# │   ├── css/           # Stylesheets
+# │   └── js/            # JavaScript files
+# ├── config/            # API key storage
+# ├── members/           # User folders & chats
+# └── knowledge_base/    # Learned Q&A pairs
+
+# ============================================
+# 8. TROUBLESHOOTING
+# ============================================
+
+# Error: "php" is not recognized
+#   - PHP is not installed or not in PATH
+#   - Install PHP or add to system PATH
+
+# Error: curl extension not found
+#   - Uncomment extension=curl in php.ini
+#   - Restart PHP server
+
+# Error: API key not configured
+#   - Go to Settings page
+#   - Add your Gemini API key
+
+# Error: Permission denied
+#   - Ensure write permissions for:
+#     - config/ folder
+#     - members/ folder
+#     - knowledge_base/ folder
+
+# ============================================
+# 9. FEATURES
+# ============================================
+
+# ✓ Modern AI-themed chat interface
+# ✓ User registration and login
+# ✓ API key management
+# ✓ Self-learning from conversations
+# ✓ Knowledge base building
+# ✓ Chat history per user
+# ✓ Health-focused AI responses
+# ✓ No database required (file-based)
+
+# ============================================

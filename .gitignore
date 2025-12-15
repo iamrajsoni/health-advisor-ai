@@ -1,0 +1,5 @@
+config/api_key.json
+logs/
+members/
+*.log
+*.zip
